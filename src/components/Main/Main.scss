@@ -1,0 +1,12 @@
+@use "../../styles/partials/mixins" as *;
+
+.main {
+	&__content {
+		display: flex;
+		flex-direction: column;
+
+		@include desktop {
+			flex-direction: row;
+		}
+	}
+}

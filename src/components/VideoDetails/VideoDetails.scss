@@ -1,0 +1,21 @@
+@use "../../styles/partials/mixins" as *;
+
+.currentVideo {
+	&__metadata {
+		display: flex;
+
+		@include tablet {
+			justify-content: space-between;
+		}
+	}
+
+	&__interaction-data,
+	&__creation-data {
+		display: flex;
+		flex-direction: column;
+
+		@include tablet {
+			flex-direction: row;
+		}
+	}
+}

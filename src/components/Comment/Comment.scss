@@ -1,0 +1,23 @@
+@use "../../styles/partials/mixins" as *;
+
+.comment {
+	display: flex;
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__avatar {
+		width: 3.125rem;
+		height: 3.125rem;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: 25%;
+	}
+}

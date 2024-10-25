@@ -1,0 +1,23 @@
+@use "../../styles/partials/mixins" as *;
+
+.comment__input {
+	.comment__form-container {
+		display: flex;
+	}
+
+	.comment__avatar {
+		width: 3.125rem;
+		height: 3.125rem;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: 25%;
+	}
+
+	.comment__form-fields {
+		display: flex;
+		flex-direction: column;
+		@include tablet {
+			flex-direction: row;
+		}
+	}
+}
