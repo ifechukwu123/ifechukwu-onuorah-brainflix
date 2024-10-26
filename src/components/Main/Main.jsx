@@ -7,7 +7,7 @@ import "./Main.scss";
 import data from "../../data/video-details.json";
 import { useState } from "react";
 
-function Main() {
+function Main({ avatar }) {
 	const [currentVideoId, setCurrentVideoId] = useState(data[0].id);
 
 	const currentVideo = data.find((video) => video.id === currentVideoId);
@@ -23,7 +23,7 @@ function Main() {
 			<div className="main__content">
 				<div className="main__current-video">
 					<VideoDetails video={currentVideo} />
-					<CommentForm video={currentVideo} />
+					<CommentForm video={currentVideo} avatar={avatar} />
 					<CommentList video={currentVideo} />
 				</div>
 				<VideoList videos={videoList} handleClick={handleClick} />

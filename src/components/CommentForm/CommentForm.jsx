@@ -1,7 +1,6 @@
 import "./CommentForm.scss";
-import avatar from "../../assets/images/Mohan-muruge.jpg";
 
-function CommentForm({ video }) {
+function CommentForm({ video, avatar }) {
 	return (
 		<div className="comment__input">
 			<span className="comment__number">{video.comments.length} comments</span>
