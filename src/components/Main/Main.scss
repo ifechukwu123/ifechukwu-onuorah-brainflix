@@ -1,12 +1,19 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .main {
 	&__content {
 		display: flex;
 		flex-direction: column;
+		padding: 0 $padding-between-comp;
+
+		@include tablet {
+			padding: 0 $tablet-padding-between-comp;
+		}
 
 		@include desktop {
 			flex-direction: row;
+			padding: 0 $desktop-padding-between-comp;
 		}
 	}
 }

@@ -18,11 +18,17 @@ function VideoInfo({ video }) {
 				</div>
 				<div className="currentVideo__interaction-data">
 					<div className="currentVideo__view-data">
-						<img src={viewsIcon} className="currentVideo__icon" />
+						<img
+							src={viewsIcon}
+							className="currentVideo__icon currentVideo__icon--views"
+						/>
 						<span className="currentVideo__views">{video.views}</span>
 					</div>
 					<div className="currentVideo__like-data">
-						<img src={likesIcon} className="currentVideo__icon" />
+						<img
+							src={likesIcon}
+							className="currentVideo__icon currentVideo__icon--likes"
+						/>
 						<span className="currentVideo__likes">{video.likes}</span>
 					</div>
 				</div>

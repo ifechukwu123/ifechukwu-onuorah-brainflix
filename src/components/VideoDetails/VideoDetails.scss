@@ -1,11 +1,40 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .currentVideo {
+	&__title,
+	&__metadata,
+	&__description {
+		padding: $padding-between-comp 0;
+		margin: 0;
+	}
+
+	&__title {
+		font-size: 2rem;
+		border-bottom: 1.5px solid $secondary-Mercury;
+
+		@include tablet {
+			font-size: 2.6875rem;
+			padding: 1.875rem 0 0;
+			border-bottom: none;
+		}
+
+		@include desktop {
+			padding-top: 2.5rem;
+		}
+	}
 	&__metadata {
 		display: flex;
+		border-bottom: 1.5px solid $secondary-Mercury;
+		gap: 2.5rem;
 
 		@include tablet {
 			justify-content: space-between;
+			padding: 1.25rem 0 0.875rem;
+		}
+
+		@include desktop {
+			padding-top: 1.125rem;
 		}
 	}
 
@@ -13,9 +42,58 @@
 	&__creation-data {
 		display: flex;
 		flex-direction: column;
+		gap: $padding-between-comp;
+		color: $primary-Silver;
 
 		@include tablet {
 			flex-direction: row;
+			align-items: center;
+			gap: 2.5rem;
+		}
+	}
+
+	&__author {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: $primary-BrainFlix-Black;
+
+		@include tablet {
+			font-size: 1.1875rem;
+		}
+	}
+
+	&__icon {
+		margin-right: 0.625rem;
+
+		@include tablet {
+			vertical-align: bottom;
+		}
+
+		&--views {
+			width: 1.5625rem;
+
+			@include tablet {
+				width: 1.875rem;
+			}
+		}
+
+		&--likes {
+			width: 1.375rem;
+		}
+	}
+
+	&__description {
+		font-size: 1.0625rem;
+		line-height: 1.5rem;
+
+		@include tablet {
+			font-size: 1.125rem;
+			width: 94%;
+			line-height: 1.875rem;
+		}
+
+		@include desktop {
+			padding: 1.875rem 0;
 		}
 	}
 }
