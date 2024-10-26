@@ -3,7 +3,7 @@ import "./CommentForm.scss";
 function CommentForm({ video, avatar }) {
 	return (
 		<div className="comment__input">
-			<span className="comment__number">{video.comments.length} comments</span>
+			<span className="comment__number">{video.comments.length} Comments</span>
 			<div className="comment__form-container">
 				<img src={avatar} className="comment__avatar" />
 				<form className="comment__form">
@@ -12,6 +12,7 @@ function CommentForm({ video, avatar }) {
 						<textarea
 							name="comment__text"
 							placeholder="Add a new comment"
+							className="comment__text"
 						></textarea>
 						<button className="comment__button">comment</button>
 					</div>
