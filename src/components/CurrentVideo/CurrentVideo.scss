@@ -1,3 +1,18 @@
-video {
-	width: 100%;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.currentVideo-container {
+	@include tablet {
+		background-color: $secondary-BrainFlix-DarkBlack;
+		padding: 0 $tablet-padding-between-comp;
+	}
+
+	@include desktop {
+		background-color: $secondary-BrainFlix-DarkBlack;
+		padding: 0 18.125rem;
+	}
+	.currentVideo__video {
+		aspect-ratio: 16/9;
+		width: 100%;
+	}
 }

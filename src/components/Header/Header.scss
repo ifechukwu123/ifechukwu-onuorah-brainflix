@@ -30,6 +30,10 @@
 			gap: 2rem;
 			width: unset;
 		}
+
+		@include desktop {
+			margin-right: 0.8125rem;
+		}
 	}
 
 	&__avatar {
@@ -38,8 +42,16 @@
 		border-radius: 50%;
 		object-fit: cover;
 		object-position: 25%;
-		//margin-top: 1.75rem;
-		//background-color: $secondary-color-Mercury;
+
+		@include tablet {
+			width: 3.5rem;
+			height: 3.5rem;
+			margin-left: -0.3125rem;
+		}
+
+		@include desktop {
+			margin-left: 1rem;
+		}
 
 		&--one {
 			@include tablet {
@@ -53,12 +65,6 @@
 			@include tablet {
 				display: unset;
 			}
-		}
-
-		@include tablet {
-			width: 3.5rem;
-			height: 3.5rem;
-			margin-left: -0.3125rem;
 		}
 	}
 
