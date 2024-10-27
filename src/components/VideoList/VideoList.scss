@@ -1,0 +1,10 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.nextVideos {
+	&__title {
+		font-weight: 400;
+		text-transform: uppercase;
+		color: $primary-Silver;
+	}
+}

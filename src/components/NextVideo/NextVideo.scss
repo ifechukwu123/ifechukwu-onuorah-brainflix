@@ -1,13 +1,51 @@
-.video {
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.nextVideo {
 	display: flex;
+	gap: 1.5rem;
+	margin-bottom: 1rem;
+
+	@include tablet {
+		margin-bottom: 1.875rem;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
 
 	&__image {
-		width: 100px;
+		aspect-ratio: 16/9;
+		width: 8.4375rem;
+		border-radius: 6px;
+
+		@include tablet {
+			width: 9.0625rem;
+		}
 	}
 
 	&__info {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+
+		@include tablet {
+			width: 15rem;
+		}
+	}
+
+	&__title,
+	&__author {
+		font-size: 1.0625rem;
+
+		@include tablet {
+			font-size: 1.1875rem;
+		}
+	}
+
+	&__title {
+		font-weight: 600;
+		margin: 0;
+		line-height: 1.5rem;
 	}
 }
