@@ -1,5 +1,4 @@
 import "./Comment.scss";
-import avatar from "../../assets/images/Mohan-muruge.jpg";
 
 function Comment({ comment }) {
 	let date = new Date(comment.timestamp);
@@ -9,7 +8,7 @@ function Comment({ comment }) {
 
 	return (
 		<article className="comment">
-			<img src={avatar} className="comment__avatar" />
+			<img src="" className="comment__avatar" />
 			<div className="comment__card">
 				<div className="comment__header">
 					<span className="comment__name">{comment.name}</span>
