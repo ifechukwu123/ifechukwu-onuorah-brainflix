@@ -1,8 +1,8 @@
 import "./CommentList.scss";
 import Comment from "../Comment/Comment";
 
-function CommentList({ video }) {
-	let commentsArray = video.comments;
+function CommentList({ currentVideo }) {
+	let commentsArray = currentVideo.comments;
 	return (
 		<section className="comments">
 			{commentsArray.map((comm) => (

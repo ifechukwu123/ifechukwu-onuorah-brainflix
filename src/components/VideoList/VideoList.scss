@@ -2,9 +2,31 @@
 @use "../../styles/partials/variables" as *;
 
 .nextVideos {
+	padding-bottom: 2rem;
+
+	@include tablet {
+		padding-bottom: 1rem;
+	}
+
+	@include desktop {
+		padding: 0 0 3.4375rem 1.875rem;
+		border-left: 1.5px solid $secondary-Mercury;
+	}
+
 	&__title {
-		font-weight: 400;
+		font-weight: 600;
 		text-transform: uppercase;
 		color: $primary-Silver;
+		font-size: 1rem;
+		margin: $padding-between-comp 0;
+
+		@include tablet {
+			margin: 2.1875rem 0;
+		}
+
+		@include desktop {
+			font-size: 0.9375rem;
+			margin: 2.8125rem 0 1.5rem;
+		}
 	}
 }

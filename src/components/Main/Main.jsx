@@ -19,14 +19,14 @@ function Main({ avatar }) {
 
 	return (
 		<main className="main">
-			<CurrentVideo video={currentVideo} />
+			<CurrentVideo currentVideo={currentVideo} />
 			<div className="main__content">
 				<div className="main__current-video">
-					<VideoDetails video={currentVideo} />
-					<CommentForm video={currentVideo} avatar={avatar} />
-					<CommentList video={currentVideo} />
+					<VideoDetails currentVideo={currentVideo} />
+					<CommentForm currentVideo={currentVideo} avatar={avatar} />
+					<CommentList currentVideo={currentVideo} />
 				</div>
-				<VideoList videos={videoList} handleClick={handleClick} />
+				<VideoList nextVideos={videoList} handleClick={handleClick} />
 			</div>
 		</main>
 	);

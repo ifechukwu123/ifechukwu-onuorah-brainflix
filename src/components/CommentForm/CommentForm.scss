@@ -4,6 +4,10 @@
 .comment__input {
 	border-bottom: 1.5px solid $secondary-Mercury;
 
+	@include desktop {
+		padding-right: 1.875rem;
+	}
+
 	.comment__number {
 		font-weight: 600;
 		font-size: 1.0625rem;
@@ -55,7 +59,7 @@
 
 		@include tablet {
 			height: 3.4375rem;
-			padding: 1rem;
+			padding: 0.625rem 1rem;
 			flex: 1;
 		}
 	}

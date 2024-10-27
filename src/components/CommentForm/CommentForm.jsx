@@ -1,9 +1,11 @@
 import "./CommentForm.scss";
 
-function CommentForm({ video, avatar }) {
+function CommentForm({ currentVideo, avatar }) {
 	return (
 		<div className="comment__input">
-			<span className="comment__number">{video.comments.length} Comments</span>
+			<span className="comment__number">
+				{currentVideo.comments.length} Comments
+			</span>
 			<div className="comment__form-container">
 				<img src={avatar} className="comment__avatar" />
 				<form className="comment__form">

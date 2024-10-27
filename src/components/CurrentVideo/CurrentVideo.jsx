@@ -1,12 +1,12 @@
 import "./CurrentVideo.scss";
 
-function CurrentVideo({ video }) {
+function CurrentVideo({ currentVideo }) {
 	return (
 		<div className="currentVideo-container">
 			<video
 				controls
-				src={video.video}
-				poster={video.image}
+				src={currentVideo.video}
+				poster={currentVideo.image}
 				className="currentVideo__video"
 			></video>
 		</div>
