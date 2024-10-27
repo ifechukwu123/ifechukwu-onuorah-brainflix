@@ -47,6 +47,7 @@
 		height: 8.125rem;
 		padding: 1rem;
 		margin-bottom: $padding-between-comp;
+		font-size: 1.0625rem;
 
 		&::placeholder {
 			color: $primary-BrainFlix-Black;
@@ -57,9 +58,14 @@
 			}
 		}
 
+		&:active {
+			border: 2px solid $primary-BrainFlix-Blue;
+		}
+
 		@include tablet {
 			height: 3.4375rem;
 			padding: 0.625rem 1rem;
+			font-size: 1.125rem;
 			flex: 1;
 		}
 	}
@@ -105,6 +111,11 @@
 
 		@include desktop {
 			width: 12.5rem;
+		}
+
+		&:hover {
+			background-color: $secondary-BrainFlix-DarkBlue;
+			cursor: pointer;
 		}
 	}
 }

@@ -128,5 +128,10 @@
 		@include desktop {
 			width: 12.5rem;
 		}
+
+		&:hover {
+			background-color: $secondary-BrainFlix-DarkBlue;
+			cursor: pointer;
+		}
 	}
 }
