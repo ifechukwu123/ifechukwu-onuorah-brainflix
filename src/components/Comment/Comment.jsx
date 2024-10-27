@@ -8,7 +8,7 @@ function Comment({ comment }) {
 
 	return (
 		<article className="comment">
-			<img src="" className="comment__avatar" />
+			<div className="comment__avatar"></div>
 			<div className="comment__card">
 				<div className="comment__header">
 					<span className="comment__name">{comment.name}</span>

@@ -10,7 +10,7 @@
 
 	@include desktop {
 		padding: 0 0 3.4375rem 1.875rem;
-		border-left: 1.5px solid $secondary-Mercury;
+		border-left: $border-bottom;
 	}
 
 	&__title {

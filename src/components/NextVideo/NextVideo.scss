@@ -2,20 +2,18 @@
 @use "../../styles/partials/variables" as *;
 
 .nextVideo {
-	display: flex;
-	gap: 1.5rem;
+	@include flex-gap(1.5rem);
 	margin-bottom: 1rem;
-
-	@include tablet {
-		margin-bottom: 1.875rem;
-	}
 
 	&:hover {
 		cursor: pointer;
 	}
 
+	@include tablet {
+		margin-bottom: 1.875rem;
+	}
+
 	&__image {
-		aspect-ratio: 16/9;
 		width: 8.4375rem;
 		border-radius: 6px;
 
@@ -25,8 +23,7 @@
 	}
 
 	&__info {
-		display: flex;
-		flex-direction: column;
+		@include flex-column;
 		justify-content: space-between;
 
 		@include tablet {

@@ -5,10 +5,13 @@ function CurrentVideo({ currentVideo }) {
 		<div className="currentVideo-container">
 			<video
 				controls
-				src={currentVideo.video}
 				poster={currentVideo.image}
 				className="currentVideo__video"
-			></video>
+			>
+				<source src={currentVideo.video} />
+				Watch the
+				<a href={currentVideo.video}>video</a>
+			</video>
 		</div>
 	);
 }

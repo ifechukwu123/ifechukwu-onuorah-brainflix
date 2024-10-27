@@ -3,8 +3,7 @@
 
 .main {
 	&__content {
-		display: flex;
-		flex-direction: column;
+		@include flex-column;
 		padding: 0 $padding-between-comp;
 
 		@include tablet {

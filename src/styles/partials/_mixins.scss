@@ -11,3 +11,33 @@
 		@content;
 	}
 }
+
+@mixin avatar {
+	width: 3.125rem;
+	height: 3.125rem;
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: 25%;
+	background-color: $secondary-Mercury;
+}
+
+@mixin input-style {
+	border: 1.5px solid $secondary-Mercury;
+	background-color: $secondary-Alabaster;
+	border-radius: 6px;
+	font-size: 1.0625rem;
+
+	&::placeholder {
+		color: $primary-BrainFlix-Black;
+	}
+}
+
+@mixin flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin flex-gap($gap) {
+	display: flex;
+	gap: $gap;
+}

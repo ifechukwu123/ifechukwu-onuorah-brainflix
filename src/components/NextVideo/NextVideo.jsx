@@ -5,7 +5,7 @@ function NextVideo({ video, handleClick }) {
 		<article
 			className="nextVideo"
 			onClick={() => {
-				handleClick(video.id);
+				handleClick(video);
 			}}
 		>
 			<img src={video.image} alt="" className="nextVideo__image" />

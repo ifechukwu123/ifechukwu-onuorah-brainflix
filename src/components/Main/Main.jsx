@@ -8,13 +8,11 @@ import data from "../../data/video-details.json";
 import { useState } from "react";
 
 function Main({ avatar }) {
-	const [currentVideoId, setCurrentVideoId] = useState(data[0].id);
+	const [currentVideo, setCurrentVideo] = useState(data[0]);
+	const videoList = data.filter((video) => video.id !== currentVideo.id);
 
-	const currentVideo = data.find((video) => video.id === currentVideoId);
-	const videoList = data.filter((video) => video.id !== currentVideoId);
-
-	function handleClick(id) {
-		setCurrentVideoId(id);
+	function handleClick(obj) {
+		setCurrentVideo(obj);
 	}
 
 	return (

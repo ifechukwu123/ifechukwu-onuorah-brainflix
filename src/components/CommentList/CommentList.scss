@@ -1,3 +1,9 @@
-.comment:last-child {
-	border-bottom: none;
+@use "../../styles/partials/mixins" as *;
+
+.comment {
+	&:last-child {
+		@include desktop {
+			border-bottom: none;
+		}
+	}
 }

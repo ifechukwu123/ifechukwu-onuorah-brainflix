@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 
 .comment__input {
-	border-bottom: 1.5px solid $secondary-Mercury;
+	border-bottom: $border-bottom;
 
 	@include desktop {
 		padding-right: 1.875rem;
@@ -17,8 +17,7 @@
 		}
 	}
 	.comment__form-container {
-		display: flex;
-		gap: 1.5rem;
+		@include flex-gap(1.5rem);
 		margin: 1.875rem 0 $padding-between-comp;
 
 		@include tablet {
@@ -33,24 +32,21 @@
 	}
 
 	.comment__avatar {
-		width: 3.125rem;
-		height: 3.125rem;
-		border-radius: 50%;
-		object-fit: cover;
-		object-position: 25%;
+		@include avatar;
+		margin-top: 1.875rem;
+
+		@include tablet {
+			margin-top: unset;
+		}
 	}
 
 	.comment__text {
-		border: 1.5px solid $secondary-Mercury;
-		border-radius: 6px;
-		background-color: $secondary-Alabaster;
+		@include input-style;
 		height: 8.125rem;
 		padding: 1rem;
 		margin-bottom: $padding-between-comp;
-		font-size: 1.0625rem;
 
 		&::placeholder {
-			color: $primary-BrainFlix-Black;
 			font-size: 1.0625rem;
 
 			@include desktop {
@@ -58,8 +54,14 @@
 			}
 		}
 
-		&:active {
-			border: 2px solid $primary-BrainFlix-Blue;
+		&:active,
+		&:focus {
+			outline: 2px solid $primary-BrainFlix-Blue;
+			border: none;
+		}
+
+		&--invalid {
+			border: 1px solid #d22d2d;
 		}
 
 		@include tablet {
@@ -81,41 +83,12 @@
 		}
 
 		&-fields {
-			display: flex;
-			flex-direction: column;
+			@include flex-column;
 
 			@include tablet {
 				flex-direction: row;
 				gap: 2rem;
 			}
-		}
-	}
-
-	.comment__button {
-		text-transform: uppercase;
-		background-color: $primary-BrainFlix-Blue;
-		width: 100%;
-		border: none;
-		color: $primary-White;
-		font-size: 1rem;
-		height: 3.4375rem;
-		border-radius: 6px;
-		background-image: url(../../assets/Icons/add_comment.svg);
-		background-position: 0.75rem 50%;
-		background-repeat: no-repeat;
-		background-size: 1.5rem;
-
-		@include tablet {
-			width: 13.125rem;
-		}
-
-		@include desktop {
-			width: 12.5rem;
-		}
-
-		&:hover {
-			background-color: $secondary-BrainFlix-DarkBlue;
-			cursor: pointer;
 		}
 	}
 }

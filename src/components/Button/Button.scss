@@ -1,0 +1,39 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+button {
+	text-transform: uppercase;
+	background-color: $primary-BrainFlix-Blue;
+	width: 100%;
+	border: none;
+	color: $primary-White;
+	font-size: 1rem;
+	font-weight: 600;
+	height: 3.4375rem;
+	border-radius: 6px;
+	background-position: 0.75rem 50%;
+	background-repeat: no-repeat;
+	background-size: 1.5rem;
+
+	@include tablet {
+		width: 13.125rem;
+		background-size: 1.75rem;
+	}
+
+	@include desktop {
+		width: 12.5rem;
+	}
+
+	&:hover {
+		background-color: $secondary-BrainFlix-DarkBlue;
+		cursor: pointer;
+	}
+}
+
+.header__button {
+	background-image: url(../../assets/Icons/upload.svg);
+}
+
+.comment__button {
+	background-image: url(../../assets/Icons/add_comment.svg);
+}

@@ -1,5 +1,6 @@
 import "./Header.scss";
 import BrainFlixLogo from "../../assets/Logo/BrainFlix-logo.svg";
+import Button from "../Button/Button";
 
 function Header({ avatar }) {
 	return (
@@ -14,7 +15,7 @@ function Header({ avatar }) {
 						alt="Avatar image"
 					/>
 				</div>
-				<button className="header__button">upload</button>
+				<Button type="upload" />
 				<img
 					src={avatar}
 					className="header__avatar header__avatar--two"
