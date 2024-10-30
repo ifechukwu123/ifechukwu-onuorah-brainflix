@@ -5,7 +5,13 @@ import Button from "../Button/Button";
 function Header({ avatar }) {
 	return (
 		<header className="header">
-			<img src={BrainFlixLogo} className="header__logo" alt="BrainFlix logo" />
+			<a href="../../../index.html">
+				<img
+					src={BrainFlixLogo}
+					className="header__logo"
+					alt="BrainFlix logo"
+				/>
+			</a>
 			<div className="header-container">
 				<div className="header__search">
 					<input type="text" className="header__input" placeholder="Search" />

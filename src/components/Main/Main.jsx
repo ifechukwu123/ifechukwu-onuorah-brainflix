@@ -11,7 +11,7 @@ function Main({ avatar }) {
 	const [currentVideo, setCurrentVideo] = useState(data[0]);
 	const videoList = data.filter((video) => video.id !== currentVideo.id);
 
-	function handleClick(obj) {
+	function handleOnClick(obj) {
 		setCurrentVideo(obj);
 	}
 
@@ -24,7 +24,7 @@ function Main({ avatar }) {
 					<CommentForm currentVideo={currentVideo} avatar={avatar} />
 					<CommentList currentVideo={currentVideo} />
 				</div>
-				<VideoList nextVideos={videoList} handleClick={handleClick} />
+				<VideoList nextVideos={videoList} handleOnClick={handleOnClick} />
 			</div>
 		</main>
 	);

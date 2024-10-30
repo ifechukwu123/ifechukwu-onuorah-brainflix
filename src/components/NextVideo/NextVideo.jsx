@@ -1,11 +1,11 @@
 import "./NextVideo.scss";
 
-function NextVideo({ video, handleClick }) {
+function NextVideo({ video, handleOnClick }) {
 	return (
 		<article
 			className="nextVideo"
 			onClick={() => {
-				handleClick(video);
+				handleOnClick(video);
 			}}
 		>
 			<img src={video.image} alt="" className="nextVideo__image" />

@@ -4,11 +4,13 @@ import Comment from "../Comment/Comment";
 function CommentList({ currentVideo }) {
 	let commentsArray = currentVideo.comments;
 	return (
-		<section className="comments">
+		<ul className="comments">
 			{commentsArray.map((comm) => (
-				<Comment comment={comm} key={comm.id} />
+				<li key={comm.id}>
+					<Comment comment={comm} />
+				</li>
 			))}
-		</section>
+		</ul>
 	);
 }
 

@@ -45,6 +45,7 @@
 		height: 8.125rem;
 		padding: 1rem;
 		margin-bottom: $padding-between-comp;
+		resize: none;
 
 		&::placeholder {
 			font-size: 1.0625rem;

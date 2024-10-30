@@ -13,6 +13,11 @@
 		border-left: $border-bottom;
 	}
 
+	&__list {
+		list-style-type: none;
+		@include margin-padding(0, 0);
+	}
+
 	&__title {
 		font-weight: 600;
 		text-transform: uppercase;

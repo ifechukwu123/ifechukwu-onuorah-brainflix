@@ -1,6 +1,8 @@
 @use "../../styles/partials/mixins" as *;
 
-.comment {
+.comments {
+	list-style-type: none;
+	@include margin-padding(0, 0);
 	&:last-child {
 		@include desktop {
 			border-bottom: none;

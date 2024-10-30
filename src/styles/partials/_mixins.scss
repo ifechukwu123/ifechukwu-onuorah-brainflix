@@ -41,3 +41,8 @@
 	display: flex;
 	gap: $gap;
 }
+
+@mixin margin-padding($margin, $padding) {
+	margin: $margin;
+	padding: $padding;
+}
