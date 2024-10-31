@@ -4,15 +4,32 @@ import CommentForm from "../CommentForm/CommentForm";
 import CommentList from "../CommentList/CommentList";
 import VideoList from "../VideoList/VideoList";
 import "./Main.scss";
-import data from "../../data/video-details.json";
-import { useState } from "react";
+import axios from "axios";
+import { API_KEY, BASE_URL } from "../../utils";
+import { useEffect, useState } from "react";
 
-function Main({ avatar }) {
-	const [currentVideo, setCurrentVideo] = useState(data[0]);
-	const videoList = data.filter((video) => video.id !== currentVideo.id);
+function Main({ avatar, videoId, videoList }) {
+	videoId = videoId ?? videoList[0].id;
+	const newVideoList = videoList.filter((video) => video.id !== videoId);
+	const [currentVideo, setCurrentVideo] = useState(null);
 
-	function handleOnClick(obj) {
-		setCurrentVideo(obj);
+	useEffect(() => {
+		async function getCurrentVideoDetails() {
+			try {
+				const response = await axios.get(
+					`${BASE_URL}/videos/${videoId}?api_key=${API_KEY}`
+				);
+				setCurrentVideo(response.data);
+			} catch (error) {
+				console.error(error);
+			}
+		}
+
+		getCurrentVideoDetails();
+	}, [videoId]);
+
+	if (!currentVideo) {
+		return <div>Loading....</div>;
 	}
 
 	return (
@@ -24,7 +41,7 @@ function Main({ avatar }) {
 					<CommentForm currentVideo={currentVideo} avatar={avatar} />
 					<CommentList currentVideo={currentVideo} />
 				</div>
-				<VideoList nextVideos={videoList} handleOnClick={handleOnClick} />
+				<VideoList nextVideos={newVideoList} />
 			</div>
 		</main>
 	);

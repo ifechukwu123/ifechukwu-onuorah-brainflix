@@ -5,7 +5,6 @@ function CommentForm({ currentVideo, avatar }) {
 	function handleOnSubmit(event) {
 		event.preventDefault();
 		event.target.comment__text.value = "";
-		//event.target.comment__text.classList.remove("comment__text--invalid");
 	}
 
 	function handleOnInput(event) {

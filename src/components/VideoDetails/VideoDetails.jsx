@@ -1,6 +1,6 @@
 import "./VideoDetails.scss";
-import viewsIcon from "../../assets/Icons/views.svg";
-import likesIcon from "../../assets/Icons/likes.svg";
+import viewsIcon from "../../assets/icons/views.svg";
+import likesIcon from "../../assets/icons/likes.svg";
 
 function VideoInfo({ currentVideo }) {
 	const date = new Date(currentVideo.timestamp);
