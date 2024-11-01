@@ -23,7 +23,7 @@ function Header({ avatar }) {
 					/>
 				</div>
 				<Link to="upload">
-					<Button type="upload" />
+					<Button type="upload" className="header__button" />
 				</Link>
 				<img
 					src={avatar}

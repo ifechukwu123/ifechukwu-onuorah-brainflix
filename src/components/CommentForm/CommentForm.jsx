@@ -36,7 +36,7 @@ function CommentForm({ currentVideo, avatar }) {
 							type="text"
 							onInput={(event) => handleOnInput(event)}
 						></textarea>
-						<Button type="comment" />
+						<Button type="comment" className="comment__button" />
 					</div>
 				</form>
 			</div>

@@ -1,0 +1,107 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.main {
+	padding: 0 $padding-between-comp;
+	border-top: $border-bottom;
+
+	@include tablet {
+		padding: 0 $tablet-padding-between-comp;
+	}
+
+	@include desktop {
+		padding: 0 $desktop-padding-between-comp;
+	}
+
+	&__title {
+		text-transform: capitalize;
+		margin: 1.875rem 0;
+
+		@include tablet {
+			border-bottom: $border-bottom;
+			font-size: 2.6875rem;
+			margin: 3.125rem 0 2.5rem;
+			padding-bottom: 2.25rem;
+		}
+	}
+
+	&__thumbnail {
+		width: 100%;
+		margin-bottom: 1.25rem;
+
+		@include tablet {
+			width: 28.75rem;
+		}
+
+		@include desktop {
+			width: unset;
+			height: 14.6875rem;
+		}
+	}
+
+	&__thumbnail-title,
+	.form__label {
+		text-transform: uppercase;
+		color: $primary-Silver;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	&__thumbnail-title {
+		@include desktop {
+			margin-top: 0;
+		}
+	}
+
+	&-content {
+		@include desktop {
+			display: flex;
+			gap: 1.875rem;
+		}
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+
+		@include desktop {
+			flex-grow: 1;
+		}
+
+		&__title,
+		&__description {
+			display: block;
+			padding: 1rem;
+			@include input-style;
+		}
+
+		&__title {
+			height: 3.4375rem;
+			margin-bottom: 1.875rem;
+
+			@include desktop {
+				margin-bottom: 2.375rem;
+			}
+		}
+
+		&__description {
+			resize: none;
+			height: 7.1875rem;
+			margin-bottom: 2.1875rem;
+		}
+
+		&__buttons {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5625rem;
+			margin-bottom: 2.1875rem;
+
+			@include tablet {
+				flex-direction: row-reverse;
+				border-top: $border-bottom;
+				padding-top: 2.1875rem;
+			}
+		}
+	}
+}

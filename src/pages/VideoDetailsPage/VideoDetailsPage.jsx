@@ -8,16 +8,18 @@ function VideoDetailsPage({ avatar }) {
 	let { videoId } = useParams();
 	const [videoList, setVideoList] = useState(null);
 
-	async function getVideos() {
-		try {
-			const response = await axios.get(`${BASE_URL}/videos?api_key=${API_KEY}`);
-			setVideoList(response.data);
-		} catch (error) {
-			console.error(error);
-		}
-	}
-
 	useEffect(() => {
+		async function getVideos() {
+			try {
+				const response = await axios.get(
+					`${BASE_URL}/videos?api_key=${API_KEY}`
+				);
+				setVideoList(response.data);
+			} catch (error) {
+				console.error(error);
+			}
+		}
+
 		getVideos();
 	}, []);
 

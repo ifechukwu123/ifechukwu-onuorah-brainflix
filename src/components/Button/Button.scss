@@ -37,3 +37,12 @@ button {
 .comment__button {
 	background-image: url(../../assets/icons/add_comment.svg);
 }
+
+.publish__button {
+	background-image: url(../../assets/icons/publish.svg);
+}
+
+.cancel__button {
+	background-color: $primary-White;
+	color: $primary-BrainFlix-Blue;
+}

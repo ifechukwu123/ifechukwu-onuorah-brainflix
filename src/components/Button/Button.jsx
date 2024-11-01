@@ -1,13 +1,7 @@
 import "./Button.scss";
 
-function Button({ type }) {
-	return (
-		<button
-			className={type === "comment" ? "comment__button" : "header__button"}
-		>
-			{type}
-		</button>
-	);
+function Button({ type, className }) {
+	return <button className={className}>{type}</button>;
 }
 
 export default Button;
