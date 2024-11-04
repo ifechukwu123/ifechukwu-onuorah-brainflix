@@ -16,7 +16,7 @@ function VideoDetailsPage({ avatar }) {
 				);
 				setVideoList(response.data);
 			} catch (error) {
-				console.error(error);
+				console.error(`Error retrieving videos: ${error}`);
 			}
 		}
 

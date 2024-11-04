@@ -6,7 +6,7 @@ function CommentList({ currentVideo }) {
 	return (
 		<ul className="comments">
 			{commentsArray.map((comm) => (
-				<li key={comm.id}>
+				<li className="comments__item" key={comm.id}>
 					<Comment comment={comm} />
 				</li>
 			))}

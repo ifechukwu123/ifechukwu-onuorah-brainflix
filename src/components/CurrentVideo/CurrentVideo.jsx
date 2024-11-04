@@ -1,4 +1,5 @@
 import "./CurrentVideo.scss";
+import { API_KEY } from "../../utils";
 
 function CurrentVideo({ currentVideo }) {
 	return (
@@ -8,7 +9,7 @@ function CurrentVideo({ currentVideo }) {
 				poster={currentVideo.image}
 				className="currentVideo__video"
 			>
-				<source src={currentVideo.video} />
+				<source src={`${currentVideo.video}?api_key=${API_KEY}`} />
 				Watch the
 				<a href={currentVideo.video}>video</a>
 			</video>

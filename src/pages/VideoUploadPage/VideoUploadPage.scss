@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
 
-.main {
+.main-video {
 	padding: 0 $padding-between-comp;
 	border-top: $border-bottom;
 
@@ -25,55 +25,62 @@
 		}
 	}
 
-	&__thumbnail {
-		width: 100%;
-		margin-bottom: 1.25rem;
-
-		@include tablet {
-			width: 28.75rem;
-		}
-
-		@include desktop {
-			width: unset;
-			height: 14.6875rem;
-		}
-	}
-
-	&__thumbnail-title,
-	.form__label {
-		text-transform: uppercase;
-		color: $primary-Silver;
-		font-size: 1rem;
-		font-weight: 600;
-		margin-bottom: 0.5rem;
-	}
-
-	&__thumbnail-title {
-		@include desktop {
-			margin-top: 0;
-		}
-	}
-
-	&-content {
-		@include desktop {
-			display: flex;
-			gap: 1.875rem;
-		}
-	}
-
 	.form {
-		display: flex;
-		flex-direction: column;
-
-		@include desktop {
-			flex-grow: 1;
+		&__content {
+			@include desktop {
+				@include flex-gap(1.875rem);
+			}
 		}
 
-		&__title,
-		&__description {
+		&__input-container {
+			@include desktop {
+				flex-grow: 1;
+			}
+		}
+
+		&__thumbnail {
+			width: 100%;
+			margin-bottom: 1.25rem;
+
+			@include tablet {
+				width: 28.75rem;
+			}
+
+			@include desktop {
+				width: unset;
+				height: 14.6875rem;
+			}
+		}
+
+		&__thumbnail-title,
+		&__label {
+			text-transform: uppercase;
+			color: $primary-Silver;
+			font-size: 1rem;
+			font-weight: 600;
+			margin: 0 0 0.5rem;
+		}
+
+		&__label,
+		&__field {
 			display: block;
+		}
+
+		&__field {
 			padding: 1rem;
+			width: 100%;
 			@include input-style;
+
+			&:active,
+			&:focus {
+				outline: 2px solid $primary-BrainFlix-Blue;
+				border: none;
+			}
+
+			&--invalid {
+				outline: 1px solid #d22d2d;
+				border: none;
+			}
 		}
 
 		&__title {
@@ -92,8 +99,7 @@
 		}
 
 		&__buttons {
-			display: flex;
-			flex-direction: column;
+			@include flex-column;
 			gap: 1.5625rem;
 			margin-bottom: 2.1875rem;
 
@@ -101,6 +107,10 @@
 				flex-direction: row-reverse;
 				border-top: $border-bottom;
 				padding-top: 2.1875rem;
+			}
+
+			@include desktop {
+				margin-bottom: 33.75rem;
 			}
 		}
 	}

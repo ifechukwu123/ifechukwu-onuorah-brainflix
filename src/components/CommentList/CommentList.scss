@@ -1,11 +1,17 @@
 @use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .comments {
 	list-style-type: none;
 	@include margin-padding(0, 0);
-	&:last-child {
-		@include desktop {
-			border-bottom: none;
+
+	&__item {
+		border-bottom: $border-bottom;
+
+		&:last-child {
+			@include desktop {
+				border-bottom: none;
+			}
 		}
 	}
 }

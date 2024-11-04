@@ -45,4 +45,7 @@ button {
 .cancel__button {
 	background-color: $primary-White;
 	color: $primary-BrainFlix-Blue;
+	&:hover {
+		background-color: unset;
+	}
 }

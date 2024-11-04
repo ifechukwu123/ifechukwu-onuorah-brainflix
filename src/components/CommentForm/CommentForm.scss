@@ -62,7 +62,8 @@
 		}
 
 		&--invalid {
-			border: 1px solid #d22d2d;
+			outline: 1px solid #d22d2d;
+			border: none;
 		}
 
 		@include tablet {

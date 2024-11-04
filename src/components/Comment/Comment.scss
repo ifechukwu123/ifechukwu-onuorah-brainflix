@@ -4,7 +4,6 @@
 .comment {
 	@include flex-gap(1.5rem);
 	padding: 1.25rem 0;
-	border-bottom: $border-bottom;
 
 	@include tablet {
 		padding: 2.1875rem 0;

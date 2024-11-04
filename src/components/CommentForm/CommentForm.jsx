@@ -8,7 +8,7 @@ function CommentForm({ currentVideo, avatar }) {
 	}
 
 	function handleOnInput(event) {
-		if (event.target.value === "") {
+		if (event.target.value.trim() === "") {
 			event.target.classList.add("comment__text--invalid");
 		} else {
 			event.target.classList.remove("comment__text--invalid");
