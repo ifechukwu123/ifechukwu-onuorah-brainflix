@@ -6,7 +6,7 @@ import axios from "axios";
 
 function VideoDetailsPage({ avatar }) {
 	let { videoId } = useParams();
-	const [videoList, setVideoList] = useState(null);
+	const [videoList, setVideoList] = useState([]);
 
 	useEffect(() => {
 		async function getVideos() {

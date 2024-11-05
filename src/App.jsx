@@ -3,7 +3,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import VideoDetailsPage from "./pages/VideoDetailsPage/VideoDetailsPage";
 import VideoUploadPage from "./pages/VideoUploadPage/VideoUploadPage";
 import avatar from "./assets/images/Mohan-muruge.jpg";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
 			<Header avatar={avatar} />
 			<Routes>
 				<Route path="/" element={<VideoDetailsPage avatar={avatar} />} />
-				<Route path="home" element={<Navigate to="/" />} />
 				<Route
 					path="videos/:videoId"
 					element={<VideoDetailsPage avatar={avatar} />}

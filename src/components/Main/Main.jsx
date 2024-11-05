@@ -14,7 +14,7 @@ function Main({ avatar, videoId, videoList }) {
 	videoId = videoId ?? videoList[0].id;
 
 	const newVideoList = videoList.filter((video) => video.id !== videoId);
-	const [currentVideo, setCurrentVideo] = useState(null);
+	const [currentVideo, setCurrentVideo] = useState([]);
 
 	useEffect(() => {
 		async function getCurrentVideoDetails() {
