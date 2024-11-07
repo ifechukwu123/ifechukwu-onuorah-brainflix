@@ -1,19 +1,16 @@
 import Main from "../../components/Main/Main";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { API_KEY, BASE_URL } from "../../utils";
 import axios from "axios";
 
-function VideoDetailsPage({ avatar }) {
+function VideoDetailsPage({ avatar, url }) {
 	let { videoId } = useParams();
 	const [videoList, setVideoList] = useState([]);
 
 	useEffect(() => {
 		async function getVideos() {
 			try {
-				const response = await axios.get(
-					`${BASE_URL}/videos?api_key=${API_KEY}`
-				);
+				const response = await axios.get(`${url}/videos`);
 				setVideoList(response.data);
 			} catch (error) {
 				console.error(`Error retrieving videos: ${error}`);
@@ -23,11 +20,13 @@ function VideoDetailsPage({ avatar }) {
 		getVideos();
 	}, []);
 
-	if (!videoList) {
+	if (videoList.length == 0) {
 		return <div>Video data is loading...</div>;
 	}
 
-	return <Main avatar={avatar} videoId={videoId} videoList={videoList} />;
+	return (
+		<Main avatar={avatar} videoId={videoId} videoList={videoList} url={url} />
+	);
 }
 
 export default VideoDetailsPage;

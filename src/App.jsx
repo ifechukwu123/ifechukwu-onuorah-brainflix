@@ -7,16 +7,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 
 function App() {
+	const { VITE_API_URL } = import.meta.env;
 	return (
 		<BrowserRouter>
 			<Header avatar={avatar} />
 			<Routes>
-				<Route path="/" element={<VideoDetailsPage avatar={avatar} />} />
+				<Route
+					path="/"
+					element={<VideoDetailsPage avatar={avatar} url={VITE_API_URL} />}
+				/>
 				<Route
 					path="videos/:videoId"
-					element={<VideoDetailsPage avatar={avatar} />}
+					element={<VideoDetailsPage avatar={avatar} url={VITE_API_URL} />}
 				/>
-				<Route path="upload" element={<VideoUploadPage />} />
+				<Route path="upload" element={<VideoUploadPage url={VITE_API_URL} />} />
 				<Route path="*" element={<NotFoundPage />} />
 			</Routes>
 		</BrowserRouter>

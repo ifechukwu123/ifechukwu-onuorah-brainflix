@@ -1,15 +1,14 @@
 import "./CurrentVideo.scss";
-import { API_KEY } from "../../utils";
 
-function CurrentVideo({ currentVideo }) {
+function CurrentVideo({ currentVideo, url }) {
 	return (
 		<div className="currentVideo-container">
 			<video
 				controls
-				poster={currentVideo.image}
+				poster={`${url}${currentVideo.image}`}
 				className="currentVideo__video"
 			>
-				<source src={`${currentVideo.video}?api_key=${API_KEY}`} />
+				<source src={`${currentVideo.video}`} />
 				Watch the
 				<a href={currentVideo.video}>video</a>
 			</video>

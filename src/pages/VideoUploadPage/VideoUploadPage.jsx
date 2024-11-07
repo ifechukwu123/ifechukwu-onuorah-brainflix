@@ -4,17 +4,30 @@ import Button from "../../components/Button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
-function VideoUploadPage() {
+function VideoUploadPage({ url }) {
 	let navigate = useNavigate();
+
+	async function sendVideoUpload(title, description) {
+		try {
+			const response = await axios.post(`${url}/videos`, {
+				title: title,
+				description: description,
+			});
+			console.log(response.data);
+		} catch (error) {
+			console.error(`Unable to upload video: ${error}`);
+		}
+	}
 
 	function handleOnSubmit(event) {
 		event.preventDefault();
 
 		if (isFormValid(event)) {
+			sendVideoUpload(event.target.title.value, event.target.description.value);
 			event.target.title.value = "";
 			event.target.description.value = "";
-
 			toast.success("Video Uploaded Successfully", {
 				position: "bottom-center",
 				theme: "colored",
