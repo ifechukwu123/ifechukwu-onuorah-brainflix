@@ -20,7 +20,7 @@ function VideoDetailsPage({ avatar, url }) {
 		getVideos();
 	}, []);
 
-	if (videoList.length == 0) {
+	if (videoList.length === 0) {
 		return <div>Video data is loading...</div>;
 	}
 

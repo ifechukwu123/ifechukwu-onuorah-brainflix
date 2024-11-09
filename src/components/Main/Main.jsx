@@ -13,7 +13,7 @@ function Main({ avatar, videoId, videoList, url }) {
 	videoId = videoId ?? videoList[0].id;
 
 	const newVideoList = videoList.filter((video) => video.id !== videoId);
-	const [currentVideo, setCurrentVideo] = useState({});
+	const [currentVideo, setCurrentVideo] = useState(null);
 
 	useEffect(() => {
 		async function getCurrentVideoDetails() {
@@ -34,7 +34,7 @@ function Main({ avatar, videoId, videoList, url }) {
 		}
 	}, [videoId]);
 
-	if (Object.keys(currentVideo).length == 0) {
+	if (!currentVideo) {
 		return <div>Loading....</div>;
 	}
 

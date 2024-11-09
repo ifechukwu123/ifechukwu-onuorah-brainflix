@@ -6,8 +6,9 @@ import avatar from "./assets/images/Mohan-muruge.jpg";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
 
+const { VITE_API_URL } = import.meta.env;
+
 function App() {
-	const { VITE_API_URL } = import.meta.env;
 	return (
 		<BrowserRouter>
 			<Header avatar={avatar} />
