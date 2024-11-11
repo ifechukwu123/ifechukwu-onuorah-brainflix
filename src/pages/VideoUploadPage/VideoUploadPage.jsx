@@ -5,17 +5,18 @@ import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { useState } from "react";
 
 function VideoUploadPage({ url }) {
 	let navigate = useNavigate();
+	const [input, setInput] = useState({ title: "", description: "" });
 
 	async function sendVideoUpload(title, description) {
 		try {
-			const response = await axios.post(`${url}/videos`, {
+			await axios.post(`${url}/videos`, {
 				title: title,
 				description: description,
 			});
-			console.log(response.data);
 		} catch (error) {
 			console.error(`Unable to upload video: ${error}`);
 		}
@@ -24,10 +25,9 @@ function VideoUploadPage({ url }) {
 	function handleOnSubmit(event) {
 		event.preventDefault();
 
-		if (isFormValid(event)) {
-			sendVideoUpload(event.target.title.value, event.target.description.value);
-			event.target.title.value = "";
-			event.target.description.value = "";
+		if (isFormValid()) {
+			sendVideoUpload(input.title, input.description);
+			setInput({ title: "", description: "" });
 			toast.success("Video Uploaded Successfully", {
 				position: "bottom-center",
 				theme: "colored",
@@ -42,22 +42,23 @@ function VideoUploadPage({ url }) {
 		}
 	}
 
-	function isFormValid(event) {
-		if (
-			(event.target.title.value.trim() === "") |
-			(event.target.description.value.trim() === "")
-		) {
+	function isFormValid() {
+		if (input.title.trim() === "" || input.description.trim() === "") {
 			return false;
 		}
 		return true;
 	}
 
-	function handleOnInput(event) {
-		if (event.target.value.trim() === "") {
+	function handleOnChange(event) {
+		const { name, value } = event.target;
+
+		if (value.trim() === "") {
 			event.target.classList.add("form__field--invalid");
 		} else {
 			event.target.classList.remove("form__field--invalid");
 		}
+
+		setInput({ ...input, [name]: value });
 	}
 
 	return (
@@ -83,8 +84,8 @@ function VideoUploadPage({ url }) {
 							name="title"
 							placeholder="Add a title to your video"
 							className="form__field form__title"
-							required
-							onInput={(event) => handleOnInput(event)}
+							value={input.title}
+							onChange={handleOnChange}
 						/>
 						<label htmlFor="description" className="form__label">
 							add a video description
@@ -94,8 +95,8 @@ function VideoUploadPage({ url }) {
 							id="description"
 							placeholder="Add a description to your video"
 							className="form__field form__description"
-							required
-							onInput={(event) => handleOnInput(event)}
+							value={input.description}
+							onChange={handleOnChange}
 						></textarea>
 					</div>
 				</div>

@@ -19,7 +19,6 @@ function Main({ avatar, videoId, videoList, url }) {
 		async function getCurrentVideoDetails() {
 			try {
 				const response = await axios.get(`${url}/videos/${videoId}`);
-				console.log(response.data);
 				setCurrentVideo(response.data);
 			} catch (error) {
 				console.error(`Error getting video details: ${error}`);

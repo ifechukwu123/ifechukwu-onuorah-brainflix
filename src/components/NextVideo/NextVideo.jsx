@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import "./NextVideo.scss";
 
 function NextVideo({ video, url }) {
-	console.log(video);
 	return (
 		<Link to={`/videos/${video.id}`} className="nextVideo">
 			<article className="nextVideo-card">
